@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solución: Navbar Flexbox Responsive Mejorada</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar sticky con flexbox mejorada -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <!-- Logo UPDS y Estudiante -->
+            <div class="navbar-logo">
+                <a href="#inicio" class="logo-link">
+                    <div class="logo-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-main">UPDS</span>
+                        <span class="logo-student">Maycol Quispe</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Menú de navegación mejorado -->
+            <ul class="navbar-menu" id="navbarMenu">
+                <li><a href="#inicio" class="nav-link active">
+                    <i class="fas fa-home"></i>
+                    <span>Inicio</span>
+                </a></li>
+                <li><a href="#servicios" class="nav-link">
+                    <i class="fas fa-cogs"></i>
+                    <span>Servicios</span>
+                </a></li>
+                <li><a href="#portfolio" class="nav-link">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Portfolio</span>
+                </a></li>
+                <li><a href="#testimonios" class="nav-link">
+                    <i class="fas fa-comments"></i>
+                    <span>Testimonios</span>
+                </a></li>
+                <li><a href="#nosotros" class="nav-link">
+                    <i class="fas fa-users"></i>
+                    <span>Nosotros</span>
+                </a></li>
+                <li><a href="#contacto" class="nav-link">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contacto</span>
+                </a></li>
+            </ul>
+
+            <!-- Botones de acción mejorados -->
+            <div class="navbar-actions">
+                <button class="btn btn-login">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span>Iniciar Sesión</span>
+                </button>
+                <button class="btn btn-signup">
+                    <i class="fas fa-user-plus"></i>
+                    <span>Registrarse</span>
+                </button>
+                <!-- Botón de modo oscuro/claro -->
+                <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+                <!-- Botón de búsqueda -->
+                <button class="search-toggle" id="searchToggle" aria-label="Buscar">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <!-- Barra de búsqueda flotante -->
+            <div class="search-bar" id="searchBar">
+                <input type="text" placeholder="Buscar servicios, proyectos..." class="search-input">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="search-close" id="searchClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- Botón hamburguesa para móviles -->
+            <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <!-- Indicador de progreso de scroll -->
+        <div class="scroll-progress" id="scrollProgress"></div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main>
+        <!-- Sección Inicio con hero mejorado -->
+        <section id="inicio" class="section section-hero">
+            <div class="hero-overlay"></div>
+            <div class="section-content">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-star"></i> 
+                        <span>Agencia Premium</span>
+                    </div>
+                    <h1 class="hero-title fade-in">
+                        <span class="title-line">Transformamos</span>
+                        <span class="title-line highlight">Ideas en Realidad</span>
+                    </h1>
+                    <p class="hero-subtitle fade-in">Creamos experiencias digitales excepcionales que impulsan tu negocio</p>
+                    
+                    <div class="hero-buttons fade-in">
+                        <button class="btn btn-cta btn-primary">
+                            <i class="fas fa-rocket"></i>
+                            <span>Comenzar Proyecto</span>
+                        </button>
+                        <button class="btn btn-cta btn-outline">
+                            <i class="fas fa-play-circle"></i>
+                            <span>Ver Video Demo</span>
+                        </button>
+                    </div>
+
+                    <!-- Stats hero -->
+                    <div class="hero-stats fade-in">
+                        <div class="stat">
+                            <div class="stat-number">250+</div>
+                            <div class="stat-label">Proyectos Exitosos</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">15</div>
+                            <div class="stat-label">Años Experiencia</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Premios</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flecha de scroll -->
+            <div class="scroll-down">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- Sección Servicios mejorada -->
+        <section id="servicios" class="section section-services">
+            <div class="section-content">
+                <div class="section-header">
+                    <span class="section-subtitle">Lo Que Ofrecemos</span>
+                    <h2 class="section-title">Nuestros Servicios</h2>
+                    <p class="section-description">Soluciones integrales para transformar tu presencia digital</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Diseño UI/UX</h3>
+                            <p>Interfaces intuitivas y atractivas que cautivan a tus usuarios y mejoran la experiencia.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Wireframes y prototipos</li>
+                                <li><i class="fas fa-check"></i> Diseño responsive</li>
+                                <li><i class="fas fa-check"></i> Pruebas de usabilidad</li>
+                            </ul>
+                            <a href="#" class="service-link">
+                                <span>Saber más</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Desarrollo Web</h3>
+                            <p>Sitios web modernos y escalables con las últimas tecnologías y mejores prácticas.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Desarrollo Frontend/Backend</li>
+                                <li><i class="fas fa-check"></i> E-commerce</li>
+                                <li><i class="fas fa-check"></i> APIs personalizadas</li>
+                            </ul>
+                            <a href="#" class="service-link">
+                                <span>Saber más</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Apps Móviles</h3>
+                            <p>Aplicaciones móviles nativas y multiplataforma de alta calidad y rendimiento.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> iOS y Android</li>
+                                <li><i class="fas fa-check"></i> React Native</li>
+                                <li><i class="fas fa-check"></i> Flutter</li>
+                            </ul>
+                            <a href="#" class="service-link">
+                                <span>Saber más</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Marketing Digital</h3>
+                            <p>Estrategias efectivas para hacer crecer tu negocio online y aumentar conversiones.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> SEO y SEM</li>
+                                <li><i class="fas fa-check"></i> Redes Sociales</li>
+                                <li><i class="fas fa-check"></i> Email Marketing</li>
+                            </ul>
+                            <a href="#" class="service-link">
+                                <span>Saber más</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Portfolio mejorada -->
+        <section id="portfolio" class="section section-portfolio">
+            <div class="section-content">
+                <div class="section-header">
+                    <span class="section-subtitle">Trabajos Recientes</span>
+                    <h2 class="section-title">Proyectos Destacados</h2>
+                    <p class="section-description">Una muestra de nuestro trabajo más innovador</p>
+                </div>
+                
+                <div class="portfolio-filter">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="web">Web</button>
+                    <button class="filter-btn" data-filter="mobile">Móvil</button>
+                    <button class="filter-btn" data-filter="branding">Branding</button>
+                </div>
+                
+                <div class="portfolio-grid">
+                    <div class="portfolio-item" data-category="web">
+                        <div class="portfolio-image">
+                            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600'><rect width='100%25' height='100%25' fill='%2300adb5'/><text x='50%25' y='50%25' font-size='36' fill='white' text-anchor='middle' dominant-baseline='middle' font-family='Poppins%2C%20Arial%2C%20sans-serif'>E-commerce%20Fashion</text></svg>" alt="E-commerce Fashion">
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h3>E-commerce Fashion</h3>
+                                    <p>Tienda online de moda con diseño moderno</p>
+                                    <div class="portfolio-tags">
+                                        <span class="tag">React</span>
+                                        <span class="tag">Node.js</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h4>E-commerce Fashion</h4>
+                            <p>Desarrollo Full Stack</p>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item" data-category="mobile">
+                        <div class="portfolio-image">
+                            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600'><rect width='100%25' height='100%25' fill='%23393e46'/><text x='50%25' y='50%25' font-size='36' fill='white' text-anchor='middle' dominant-baseline='middle' font-family='Poppins%2C%20Arial%2C%20sans-serif'>Dashboard%20Analytics</text></svg>" alt="Dashboard Analytics">
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h3>Dashboard Analytics</h3>
+                                    <p>Panel de control de datos en tiempo real</p>
+                                    <div class="portfolio-tags">
+                                        <span class="tag">Vue.js</span>
+                                        <span class="tag">D3.js</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h4>Dashboard Analytics</h4>
+                            <p>Aplicación Web</p>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item" data-category="mobile">
+                        <div class="portfolio-image">
+                            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600'><rect width='100%25' height='100%25' fill='%23ff5722'/><text x='50%25' y='50%25' font-size='36' fill='white' text-anchor='middle' dominant-baseline='middle' font-family='Poppins%2C%20Arial%2C%20sans-serif'>App%20Fitness</text></svg>" alt="App Fitness">
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h3>App Fitness</h3>
+                                    <p>Aplicación de entrenamiento personalizado</p>
+                                    <div class="portfolio-tags">
+                                        <span class="tag">React Native</span>
+                                        <span class="tag">Firebase</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h4>App Fitness</h4>
+                            <p>Aplicación Móvil</p>
+                        </div>
+                    </div>
+                    
+                    <div class="portfolio-item" data-category="branding">
+                        <div class="portfolio-image">
+                            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600'><rect width='100%25' height='100%25' fill='%236c5ce7'/><text x='50%25' y='50%25' font-size='36' fill='white' text-anchor='middle' dominant-baseline='middle' font-family='Poppins%2C%20Arial%2C%20sans-serif'>Brand%20Identity</text></svg>" alt="Brand Identity">
+                            <div class="portfolio-overlay">
+                                <div class="overlay-content">
+                                    <h3>Brand Identity</h3>
+                                    <p>Identidad corporativa completa</p>
+                                    <div class="portfolio-tags">
+                                        <span class="tag">Diseño</span>
+                                        <span class="tag">Branding</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-info">
+                            <h4>Brand Identity</h4>
+                            <p>Diseño Corporativo</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section-footer">
+                    <button class="btn btn-secondary btn-view-all">
+                        <span>Ver Todos los Proyectos</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nueva Sección Nosotros -->
+        <section id="nosotros" class="section section-about">
+            <div class="section-content">
+                <div class="about-container">
+                    <div class="about-image">
+                        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1000' height='700'><rect width='100%25' height='100%25' fill='%2300b894'/><text x='50%25' y='50%25' font-size='40' fill='white' text-anchor='middle' dominant-baseline='middle' font-family='Poppins%2C%20Arial%2C%20sans-serif'>Nuestro%20Equipo</text></svg>" alt="Nuestro equipo">
+                    </div>
+                    <div class="about-content">
+                        <span class="section-subtitle">Quiénes Somos</span>
+                        <h2 class="section-title">Innovación y Excelencia</h2>
+                        <p class="about-description">
+                            Somos un equipo de profesionales apasionados por la tecnología y el diseño. 
+                            Con más de 15 años de experiencia, hemos ayudado a empresas de todos los tamaños 
+                            a transformar sus ideas en soluciones digitales exitosas.
+                        </p>
+                        
+                        <div class="about-features">
+                            <div class="feature">
+                                <i class="fas fa-bullseye"></i>
+                                <div>
+                                    <h4>Misión</h4>
+                                    <p>Crear soluciones digitales innovadoras que impulsen el éxito de nuestros clientes.</p>
+                                </div>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-eye"></i>
+                                <div>
+                                    <h4>Visión</h4>
+                                    <p>Ser referentes en desarrollo tecnológico a nivel internacional.</p>
+                                </div>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-handshake"></i>
+                                <div>
+                                    <h4>Valores</h4>
+                                    <p>Compromiso, innovación, transparencia y trabajo en equipo.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Testimonios mejorada -->
+        <section id="testimonios" class="section section-testimonials">
+            <div class="section-content">
+                <div class="section-header">
+                    <span class="section-subtitle">Lo Que Dicen</span>
+                    <h2 class="section-title">Testimonios de Clientes</h2>
+                    <p class="section-description">Historias de éxito de nuestros clientes satisfechos</p>
+                </div>
+                
+                <div class="testimonials-container">
+                    <div class="testimonial-slider">
+                        <div class="testimonial-slide active">
+                            <div class="testimonial-content">
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="testimonial-text">
+                                    "El equipo de DesignPro transformó completamente nuestra presencia online. 
+                                    No solo entregaron un producto excepcional, sino que su soporte post-venta 
+                                    ha sido increíble. ¡Totalmente recomendados!"
+                                </p>
+                                <div class="testimonial-author">
+                                    <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="María González" class="author-avatar">
+                                    <div class="author-info">
+                                        <strong>María González</strong>
+                                        <span>CEO, TechStart Solutions</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-slide">
+                            <div class="testimonial-content">
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <p class="testimonial-text">
+                                    "Profesionales, creativos y muy atentos a los detalles. El proyecto se entregó 
+                                    antes de lo esperado y superó todas nuestras expectativas. Ya estamos planeando 
+                                    nuestro segundo proyecto con ellos."
+                                </p>
+                                <div class="testimonial-author">
+                                    <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="Carlos Ramírez" class="author-avatar">
+                                    <div class="author-info">
+                                        <strong>Carlos Ramírez</strong>
+                                        <span>Director, Innovate Co.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-controls">
+                        <button class="testimonial-prev">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <div class="testimonial-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <button class="testimonial-next">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Contacto mejorada -->
+        <section id="contacto" class="section section-contact">
+            <div class="section-content">
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="section-header">
+                            <span class="section-subtitle">Contáctanos</span>
+                            <h2 class="section-title">Hablemos de Tu Proyecto</h2>
+                            <p class="section-description">Estamos listos para hacer realidad tus ideas</p>
+                        </div>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Email</h4>
+                                    <p>info@designpro.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Teléfono</h4>
+                                    <p>+1 (555) 123-4567</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Dirección</h4>
+                                    <p>123 Design Street, Creative City</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-social">
+                                <h4>Síguenos</h4>
+                                <div class="social-icons">
+                                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <input type="text" placeholder="Nombre completo" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="email" placeholder="Email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="tel" placeholder="Teléfono">
+                            </div>
+                            
+                            <div class="form-group">
+                                <select required>
+                                    <option value="" disabled selected>Selecciona un servicio</option>
+                                    <option value="design">Diseño UI/UX</option>
+                                    <option value="web">Desarrollo Web</option>
+                                    <option value="mobile">Apps Móviles</option>
+                                    <option value="marketing">Marketing Digital</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <textarea placeholder="Cuéntanos sobre tu proyecto..." rows="4" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-submit">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Enviar Mensaje</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer mejorado -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <div class="logo-text">
+                        <span>Design</span>
+                        <span class="logo-pro">Pro</span>
+                    </div>
+                </div>
+                <p>Transformamos ideas en experiencias digitales excepcionales.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Enlaces Rápidos</h4>
+                <ul class="footer-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Servicios</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Diseño UI/UX</a></li>
+                    <li><a href="#">Desarrollo Web</a></li>
+                    <li><a href="#">Apps Móviles</a></li>
+                    <li><a href="#">Marketing Digital</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Suscríbete</h4>
+                <p>Recibe las últimas noticias y ofertas especiales.</p>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="Tu email" required>
+                    <button type="submit">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 DesignPro. Todos los derechos reservados.</p>
+            <div class="footer-legal">
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Términos y Condiciones</a>
+            </div>
+        </div>
+        
+        <!-- Botón para volver arriba -->
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </footer>
+
+    <!-- Modal de login -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <button class="modal-close" id="loginClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3>Iniciar Sesión</h3>
+            <form class="modal-form">
+                <div class="form-group">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Contraseña" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Entrar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de registro -->
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <button class="modal-close" id="registerClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3>Crear Cuenta</h3>
+            <form class="modal-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Nombre completo" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Contraseña" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Confirmar contraseña" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Registrarse</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
